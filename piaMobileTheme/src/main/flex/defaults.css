@@ -1,0 +1,551 @@
+/* CSS file */
+@namespace s "library://ns.adobe.com/flex/spark";
+@namespace mx "library://ns.adobe.com/flex/mx";
+@namespace components "com.pialabs.eskimo.components.*";
+@namespace controls "com.pialabs.eskimo.controls.*";
+@namespace ios "com.pialabs.eskimo.skins.mobile.ios.*";
+@namespace ns "http://piaction.com";
+
+@media (os-platform:"IOS")
+{
+    global
+    {
+        color: #000000;
+        modalTransparencyBlur: 0;
+        modalTransparency: 0.5;
+        modalTransparencyColor: black;
+        modalTransparencyDuration: 250;
+        fontSize: 16;
+    }
+    
+    s|View
+    {
+        backgroundColor: #C4CBD3;   
+    }
+    
+/*    s|Button
+    {
+        skinClass:ClassReference("com.pialabs.eskimo.skins.mobile.android.ButtonSkin");
+        fontWeight: normal;
+        chromeColor: #000000;
+        color: #FFFFFF;
+        textShadowColor: #FFFFFF;
+        textShadowAlpha: 0.5;
+    }*/
+    
+    s|ActionBar
+    {
+       skinClass: ClassReference("com.pialabs.eskimo.skins.mobile.ios.ActionBarSkin");
+       chromeColor: #6D84A2;  
+       defaultButtonAppearance: beveled;
+    }
+    
+    s|Form
+    {
+        skinClass:ClassReference("com.pialabs.eskimo.skins.mobile.android.FormSkin");
+		backgroundAlpha: 0;
+		fontSize: 12;
+    } 
+    s|FormItem
+    {
+        skinClass:ClassReference("com.pialabs.eskimo.skins.mobile.android.FormItemSkin");
+		backgroundAlpha: 0;
+    } 
+    s|FormItem s|TextInput
+    {
+	  color: #000000;
+    }
+    s|FormItem #labelDisplay
+    {
+        color: #ffffff;
+        verticalAlign: middle;
+        fontWeight: bold;
+    }
+    s|FormItem #sequenceDisplay
+    {
+        color: #000000;
+    }
+    s|FormItem #errorTextDisplay
+    {
+      fontStyle: italic;
+      fontWeight: normal;
+      color: #AAAAAA;
+      textAlign: right;
+    } 
+    
+    s|FormItem s|TextInput
+    {
+		
+/*        borderVisible: false;
+        contentBackgroundAlpha: 0;
+        focusAlpha: 0;*/
+    }
+    
+    s|ButtonBar
+    {
+        skinClass: ClassReference("com.pialabs.eskimo.skins.mobile.ios.ButtonBarSkin");
+        color: #FFFFFF;
+    }
+    
+    s|ButtonBarButton
+    {
+        fontWeight: normal;
+        chromeColor: #4A6A9B;
+        textShadowColor: #000000;
+        textShadowAlpha: 0.5;
+    }
+    
+    s|CheckBox
+    {
+        skinClass: ClassReference("com.pialabs.eskimo.skins.mobile.ios.MobileCheckBoxSkin");
+        symbolColor: #0073F5;
+    }
+    
+    s|HSlider
+    {
+        skinClass: ClassReference("com.pialabs.eskimo.skins.mobile.ios.HSliderSkin");
+        chromeColor: #71a7f1;
+    }
+    
+    controls|SkinnableAlert
+    {
+/*        skinClass: ClassReference("com.pialabs.eskimo.skins.mobile.ios.AlertSkin");
+        backgroundColor: #031037;
+        backgroundAlpha: 0.8;
+        okButtonStyleName: "okButtonStyle";
+        cancelButtonStyleName: "cancelButtonStyle";
+        yesButtonStyleName: "yesButtonStyle";
+        noButtonStyleName: "noButtonStyle";*/
+		skinClass: ClassReference("com.pialabs.eskimo.skins.mobile.android.AlertSkin");
+		backgroundColor: #333333;
+		backgroundAlpha: 1;
+		okButtonStyleName: "mediumButtonStyle";
+		cancelButtonStyleName: "mediumButtonStyle";
+		yesButtonStyleName: "mediumButtonStyle";
+		noButtonStyleName: "mediumButtonStyle";
+    }
+	
+	.mediumButtonStyle{
+		color: #ffffff;
+		fontSize: 16;
+		chromeColor: #000000;
+		skinClass: ClassReference("com.pialabs.eskimo.skins.mobile.android.OkButtonSkin");
+	}
+    
+    .okButtonStyle
+    {
+       chromeColor: #3C4766;   
+       fillAlpha: 0.8;
+    }
+    .cancelButtonStyle
+    {
+       chromeColor: #08163D;   
+    }
+    .yesButtonStyle
+    {
+       chromeColor: #3C4766;
+       fillAlpha: 0.8;
+    }
+    .noButtonStyle
+    {
+       chromeColor: #08163D;   
+    }
+    
+    components|UniqueChoiceList
+    {
+        skinClass: ClassReference("com.pialabs.eskimo.skins.mobile.ios.UniqueChoiceListSkin");
+        contentBackgroundAlpha: 0;
+    }
+    
+    
+    components|PageIndicator
+    {
+      itemSkinClass: ClassReference("com.pialabs.eskimo.skins.mobile.android.PageIndicatorItemSkin");
+      chromeAlpha: 1;
+      chromeColor: #888888;
+      selectedChromeAlpha: 1;
+      selectedChromeColor: #BBBB44;
+    }
+    
+    components|ConfirmButton
+    {
+        skinClass: ClassReference("com.pialabs.eskimo.skins.mobile.ios.ConfirmButtonSkin");   
+        confirmChromeColor: #FF3333;
+        buttonColor: #FFFFFF;
+    }
+    
+    s|TextInput
+    {
+        contentBackgroundColor: #FFFFFF;
+/*        focusAlpha: 0;*/
+    }
+    
+    components|DateChooser
+    {
+      skinClass: ClassReference("com.pialabs.eskimo.skins.mobile.ios.DateChooserSkin");
+    }
+        
+    s|ActionBar.beveled s|Group#navigationGroup s|Button.splitViewPanelButtonStyle
+    {
+      skinClass: ClassReference("spark.skins.mobile.BeveledActionButtonSkin");
+    }
+
+    .sectionRendererStyle
+    {
+      backgroundColor:#AAAAAA;
+      color:#FFFFFF;
+    }
+}
+
+@media (os-platform:"ANDROID")
+{
+    global
+    {
+        modalTransparencyBlur: 0;
+        modalTransparency: 0.5;
+        modalTransparencyColor: black;
+        modalTransparencyDuration: 250;   
+    }
+    
+    s|Form
+    {
+        skinClass:ClassReference("com.pialabs.eskimo.skins.mobile.ios.FormSkin");
+        backgroundAlpha: 0;
+    } 
+    s|FormItem
+    {
+        skinClass:ClassReference("com.pialabs.eskimo.skins.mobile.ios.FormItemSkin");
+        backgroundAlpha: 0;
+    } 
+	s|FormItem #labelDisplay
+	{
+		color: #ffffff;
+		verticalAlign: middle;
+		fontWeight: bold;
+	}
+    s|FormItem #errorTextDisplay
+    {
+      fontStyle: italic;
+      fontWeight: normal;
+      color: #AAAAAA;
+      textAlign: right;
+    } 
+    
+    s|FormItem s|CheckBox
+    {
+      iconPlacement: "left";
+    }
+    
+    controls|SkinnableAlert
+    {
+		skinClass: ClassReference("com.pialabs.eskimo.skins.mobile.android.AlertSkin");
+		backgroundColor: #333333;
+		backgroundAlpha: 1;
+		okButtonStyleName: "mediumButtonStyle";
+		cancelButtonStyleName: "mediumButtonStyle";
+		yesButtonStyleName: "mediumButtonStyle";
+		noButtonStyleName: "mediumButtonStyle";
+	}
+	
+	.mediumButtonStyle{
+		color: #ffffff;
+		fontSize: 16;
+		chromeColor: #000000;
+		skinClass: ClassReference("com.pialabs.eskimo.skins.mobile.android.OkButtonSkin");
+	}
+    
+    
+    components|UniqueChoiceList
+    {
+        skinClass: ClassReference("com.pialabs.eskimo.skins.mobile.android.UniqueChoiceListSkin");
+        contentBackgroundAlpha: 0;
+    }
+
+    
+    components|ContextableList
+    {
+        alternatingItemColors: #000000;
+        color: #FFFFFF;
+        contentBackgroundColor: #000000;
+    }
+    
+    components|ConfirmButton
+    {
+        skinClass: ClassReference("com.pialabs.eskimo.skins.mobile.ios.ConfirmButtonSkin");   
+        confirmChromeColor: #FF3333;
+        buttonColor: #000000;
+    }
+    
+    s|NumericStepper
+    {
+        skinClass: ClassReference("com.pialabs.eskimo.skins.mobile.android.NumericStepperSkin");
+        fontSize: 30;
+        chromeColor: #FF7800;
+    }
+    
+    s|CheckBox
+    {
+        skinClass: ClassReference("com.pialabs.eskimo.skins.mobile.android.CheckBoxSkin");
+        iconPlacement: "right";
+    }
+    
+    s|RadioButton
+    {
+        skinClass: ClassReference("com.pialabs.eskimo.skins.mobile.android.RadioButtonSkin");
+        iconPlacement: "right";
+    }
+    
+    components|DateChooser
+    {
+      skinClass: ClassReference("com.pialabs.eskimo.skins.mobile.android.DateChooserSkin");
+    }
+    
+    .sectionRendererStyle
+    {
+      textAlign:center;
+      backgroundColor:#AAAAAA;
+    }
+	
+	components|PageIndicator
+	{
+		itemSkinClass: ClassReference("com.pialabs.eskimo.skins.mobile.android.PageIndicatorItemSkin");
+		chromeAlpha: 1;
+		chromeColor: #888888;
+		selectedChromeAlpha: 1;
+		selectedChromeColor: #BBBB44;
+	}
+    
+}
+
+@media (os-platform:"QNX")
+{
+  global
+  {
+    modalTransparencyBlur: 0;
+    modalTransparency: 0.5;
+    modalTransparencyColor: black;
+    modalTransparencyDuration: 250;   
+  }
+  
+  s|Form
+  {
+    skinClass:ClassReference("com.pialabs.eskimo.skins.mobile.android.FormSkin");
+    backgroundAlpha: 0;
+  } 
+  s|FormItem
+  {
+    skinClass:ClassReference("com.pialabs.eskimo.skins.mobile.android.FormItemSkin");
+    backgroundAlpha: 0;
+  } 
+  s|FormItem s|CheckBox
+  {
+    iconPlacement: "left";
+  }
+  
+  controls|SkinnableAlert
+  {
+    skinClass: ClassReference("com.pialabs.eskimo.skins.mobile.android.AlertSkin");
+    backgroundColor: #424242;
+    backgroundAlpha: 0.9;
+  }
+  
+  
+  components|UniqueChoiceList
+  {
+    skinClass: ClassReference("com.pialabs.eskimo.skins.mobile.android.UniqueChoiceListSkin");
+    contentBackgroundAlpha: 0;
+  }
+  
+  
+  components|ContextableList
+  {
+    alternatingItemColors: #000000;
+    color: #FFFFFF;
+    contentBackgroundColor: #000000;
+  }
+  
+  components|ConfirmButton
+  {
+    skinClass: ClassReference("com.pialabs.eskimo.skins.mobile.ios.ConfirmButtonSkin");   
+    confirmChromeColor: #FF3333;
+    buttonColor: #000000;
+  }
+  
+  s|NumericStepper
+  {
+    skinClass: ClassReference("com.pialabs.eskimo.skins.mobile.android.NumericStepperSkin");
+    fontSize: 30;
+    chromeColor: #FF7800;
+  }
+  
+  s|CheckBox
+  {
+    skinClass: ClassReference("com.pialabs.eskimo.skins.mobile.ios.MobileCheckBoxSkin");
+    iconPlacement: "right";
+  }
+  
+  s|RadioButton
+  {
+    skinClass: ClassReference("com.pialabs.eskimo.skins.mobile.android.RadioButtonSkin");
+    iconPlacement: "right";
+  }
+  
+  components|DateChooser
+  {
+    skinClass: ClassReference("com.pialabs.eskimo.skins.mobile.ios.DateChooserSkin");
+  }
+  
+  .sectionRendererStyle
+  {
+    textAlign:center;
+    backgroundColor:#C0C0C0;
+  }
+}
+
+components|MobileContextMenu
+{
+    skinClass: ClassReference("com.pialabs.eskimo.skins.mobile.android.MobileContextMenuSkin");
+    headerHeight: 50;
+    contextMenuIcon: Embed(source="com/pialabs/eskimo/skins/mobile/android/assets/contextMenuIcon.png");
+    headerVisible: true;
+}
+
+components|MobileContextMenu s|List
+{
+    alternatingItemColors: #FFFFFF;
+    color: #000000;
+    contentBackgroundColor: #FFFFFF;
+}
+
+
+components|PopOver
+{
+    skinClass: ClassReference("com.pialabs.eskimo.skins.mobile.ios.PopOverSkin");
+    chromeColor: #10142E;
+}
+
+components|ComboBox
+{
+    skinClass: ClassReference("com.pialabs.eskimo.skins.mobile.android.ComboBoxSkin");
+    popupSkinClass: ClassReference("com.pialabs.eskimo.skins.mobile.android.PopUpUniqueChoiceSkin");
+}
+
+components|ListWheel
+{
+    skinClass: ClassReference("com.pialabs.eskimo.skins.mobile.ios.ListWheelSkin");
+    gradientColorBegin: #5555AA;
+    gradientColorEnd: #3333AA;
+}
+
+components|ListWheel s|Label
+{
+    verticalAlign: middle;
+}
+
+components|PageIndicator
+{
+  pageItemColor: #FFFFFF;
+  pageItemAlpha: 0.5;
+  selectedPageItemColor: #FFFFFF;
+  selectedPageItemAlpha: 1;
+  pageItemSize: 15;
+  selectedPageItemSize: 15;
+  backgroundColor: #000000;
+  backgroundAlpha: 0;
+  borderAlpha: 0;
+}
+
+components|DeletableItemRenderer
+{
+    paddingTop: 5;
+    paddingBottom: 5;
+    editIconPadding:10;
+    verticalAlign: middle;
+    editIcon: Embed(source="com/pialabs/eskimo/skins/mobile/ios/assets/delete.png");
+    editIconWidth: 27;
+    editIconHeight: 27;
+    deleteButtonStyle: deletetableItemRendererDeleteButtonStyle;
+}
+
+components|DeletableItemRenderer .deletetableItemRendererDeleteButtonStyle
+{
+  chromeColor: #CC2A27;
+  color: #FFFFFF
+}
+
+components|MultipleChoiceList
+{
+    contentBackgroundAlpha: 0;
+}
+
+components|ListStepper
+{
+    skinClass: ClassReference("com.pialabs.eskimo.skins.mobile.android.ListStepperSkin");
+    fontSize: 30;
+    textAlign: center;
+    alternatingItemColors: #d8d8d8;
+    chromeColor: #FF7800;
+}
+
+components|ListStepper s|Label
+{
+    verticalAlign: middle;
+}
+
+ios|SearchTextInputSkin
+{
+  icon: Embed(source="com/pialabs/eskimo/skins/mobile/ios/assets/searchIcon.png");
+}
+
+components|CarouselList
+{
+  contentBackgroundAlpha: 0;
+  verticalScrollPolicy: off;
+  horizontalScrollPolicy: off;
+}
+
+components|Toast
+{
+  skinClass: ClassReference("com.pialabs.eskimo.skins.mobile.android.ToastSkin");
+  color: #FFFFFF;
+  
+  chromeColor: #424242;
+  
+  marginTop: 30;
+  marginBottom: 30;
+  marginLeft: 10;
+  marginRight: 10;
+}
+
+components|SplitViewApplication
+{
+  backgroundColor: #000000;
+}
+
+components|SplitView
+{
+  skinClass: ClassReference("com.pialabs.eskimo.skins.mobile.ios.SplitViewSkin");
+  panelButtonStyleName: "splitViewPanelButtonStyle";
+}
+
+components|SectionList
+{
+  sectionRendererStyleName: "sectionRendererStyle";
+  skinClass: ClassReference("com.pialabs.eskimo.skins.mobile.android.SectionListSkin");
+}
+
+components|BreadCrumb{
+  skinClass: ClassReference("com.pialabs.eskimo.skins.mobile.ios.BreadCrumbSkin");
+  chromeColor: #999999;
+  fillAlpha: 1;
+  borderColor: #000000;
+  borderAlpha: 0.2;
+  color: #000000;
+  fontSize: 14;
+}
+
+components|BreadCrumb s|ButtonBarButton
+{
+  textShadowColor: #FFFFFF;
+  
+}

@@ -1,0 +1,71 @@
+/* CSS file */
+@namespace s "library://ns.adobe.com/flex/spark";
+@namespace samples "com.pialabs.eskimo.samples.*";
+@namespace views "com.pialabs.eskimo.views.*";
+@namespace components "com.pialabs.eskimo.components.*";
+
+@media (os-platform:"ANDROID")
+{
+  views|SampleView
+  {
+    backgroundColor: #EEEEEE;
+  }
+  
+  samples|FormView
+  {
+    backgroundColor: #000000;
+  }
+  
+  samples|FormView #labelDisplay
+  {
+    color: #FFFFFF;
+  }
+  
+  .componentContainerStyle
+  {
+    skinClass: ClassReference("com.pialabs.eskimo.skins.AndroidContainerSkin");
+  }
+  
+  .parameterContainerStyle
+  {
+    skinClass: ClassReference("com.pialabs.eskimo.skins.AndroidContainerSkin");
+  }
+  
+  components|DeletableList s|Button
+  {
+    textShadowColor: #000000;
+  }
+}
+@media (os-platform:"IOS")
+{
+  views|SampleListView #filterInput
+  {
+    skinClass: ClassReference("com.pialabs.eskimo.skins.mobile.ios.SearchTextInputSkin");
+  }
+  
+  .componentContainerStyle
+  {
+    skinClass: ClassReference("com.pialabs.eskimo.skins.ContainerSkin");
+  }
+  
+  .parameterContainerStyle
+  {
+    backgroundAlpha: 0;
+  }
+  
+  s|NumericStepper
+  {
+    skinClass: ClassReference("com.pialabs.eskimo.skins.mobile.android.NumericStepperSkin");
+    fontSize: 30;
+  }
+  
+  .verticalFormItemStyle
+  {
+    skinClass: ClassReference("com.pialabs.eskimo.skins.mobile.ios.VerticalFormItemSkin");
+  }
+}
+
+s|ViewNavigator
+{
+  skinClass: ClassReference("com.pialabs.eskimo.skins.ViewNavigatorSkin");
+}

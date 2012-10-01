@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 
+Copyright (c) 2011, PIA. All rights reserved.
+
+This file is part of Eskimo.
+
+Eskimo is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+Eskimo is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with Eskimo.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<s:View xmlns:fx="http://ns.adobe.com/mxml/2009"
+        xmlns:s="library://ns.adobe.com/flex/spark" title="{data.name}"
+        viewActivate="onViewActivate(event)"
+        creationComplete="onCreationComplete(event)"
+        xmlns:components="com.pialabs.eskimo.components.*">
+  <fx:Script>
+    <![CDATA[
+      import com.pialabs.eskimo.model.Model;
+      import com.pialabs.eskimo.model.Sample;
+      
+      import mx.core.FlexGlobals;
+      import mx.events.FlexEvent;
+      import mx.utils.StringUtil;
+      
+      import spark.components.TextInput;
+      import spark.events.ViewNavigatorEvent;
+      
+      [Bindable]
+      [Embed(source = "/assets/apple.png")]
+      private var _logoAppleCls:Class;
+      
+      [Bindable]
+      [Embed(source = "/assets/android.png")]
+      private var _logoAndroidCls:Class;
+      
+      [Bindable]
+      [Embed(source = "/assets/blackberry.png")]
+      private var _logoQNXCls:Class;
+      
+      protected function onViewActivate(event:ViewNavigatorEvent):void
+      {
+        var sample:Sample = Sample(data);
+        
+        
+        if (sample.exclusiveOS != null && sample.exclusiveOS != "")
+        {
+          switch (sample.exclusiveOS)
+          {
+            case Model.ANDROID:
+              osPicto.addElement(androidIcon);
+              break;
+            case Model.IOS:
+              osPicto.addElement(appleIcon);
+              break;
+            case Model.QNX:
+              osPicto.addElement(qnxIcon);
+              break;
+            default:
+              throw new TypeError("Unknown OS:" + sample.exclusiveOS);
+              break;
+          }
+        }
+        else
+        {
+          osPicto.addElement(appleIcon);
+          osPicto.addElement(androidIcon);
+          osPicto.addElement(qnxIcon);
+        }
+        
+        this.actionContent = [availableOS];
+      }
+      
+      protected function getValueFromTextInput(input:TextInput):String
+      {
+        var value:String = input.text;
+        if (value == null)
+        {
+          return null;
+        }
+        value = StringUtil.trim(value);
+        if (value.length == 0)
+        {
+          return null;
+        }
+        return value;
+      }
+      
+      protected function onCreationComplete(event:FlexEvent):void
+      {
+        if (FlexGlobals.topLevelApplication is tourDEskimoSplit)
+        {
+          backButton.visible = backButton.includeInLayout = false;
+        }
+      }
+    ]]>
+  </fx:Script>
+  <fx:Declarations>
+    <s:VGroup id="availableOS" gap="0" horizontalAlign="center">
+      <s:Label height="100%" color="#ffffff" fontSize="12" id="OSlabel"
+               text="Managed OS" verticalAlign="middle" width="100%"/>
+      <s:HGroup id="osPicto" horizontalAlign="center" width="100%">
+
+      </s:HGroup>
+    </s:VGroup>
+
+    <s:BitmapImage id="appleIcon" source="{_logoAppleCls}" width="25"
+                   height="25"/>
+    <s:BitmapImage id="androidIcon" source="{_logoAndroidCls}" width="25"
+                   height="25"/>
+    <s:BitmapImage id="qnxIcon" source="{_logoQNXCls}" width="25" height="25"/>
+
+  </fx:Declarations>
+  <s:layout>
+    <s:VerticalLayout paddingTop="10" paddingLeft="3" paddingRight="3"
+                      horizontalAlign="center"/>
+  </s:layout>
+  <s:navigationContent>
+    <s:Button id="backButton" label="Back" click="navigator.popView()"/>
+  </s:navigationContent>
+
+</s:View>

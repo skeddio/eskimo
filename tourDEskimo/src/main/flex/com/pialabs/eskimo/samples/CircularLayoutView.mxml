@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 
+Copyright (c) 2011, PIA. All rights reserved.
+
+This file is part of Eskimo.
+
+Eskimo is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+Eskimo is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with Eskimo.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<views:SampleView xmlns:fx="http://ns.adobe.com/mxml/2009"
+                  xmlns:s="library://ns.adobe.com/flex/spark"
+                  title="CircularLayoutView"
+                  xmlns:views="com.pialabs.eskimo.views.*"
+                  xmlns:pia="http://piaction.com">
+  <fx:Script>
+    <![CDATA[
+      import mx.core.FlexGlobals;
+      import mx.events.ItemClickEvent;
+      import mx.managers.PopUpManager;
+      
+      import spark.effects.Fade;
+      import spark.effects.Move;
+      import spark.effects.Resize;
+      
+      protected function slideDataGroup_itemClickHandler(event:ItemClickEvent):void
+      {
+        if (event.index == carouselList.selectedIndex)
+        {
+          var targetBounds:Rectangle = event.relatedObject.getBounds(this);
+          var point:Point = localToGlobal(new Point());
+          var imgSize:Number = Math.min(width * 0.8, 400);
+          
+          PopUpManager.addPopUp(popUp, this, true);
+          img.source = event.item.source;
+          
+          var resizeEff:Resize = new Resize(popUp);
+          
+          resizeEff.widthFrom = targetBounds.width;
+          resizeEff.widthTo = imgSize;
+          resizeEff.heightFrom = targetBounds.height;
+          resizeEff.heightTo = imgSize;
+          resizeEff.startDelay = 100;
+          
+          resizeEff.play();
+          
+          var moveEff:Move = new Move(popUp);
+          
+          var ratio:Number = FlexGlobals.topLevelApplication.runtimeDPI / FlexGlobals.topLevelApplication.applicationDPI;
+          
+          
+          moveEff.xFrom = targetBounds.x + point.x / ratio;
+          moveEff.xTo = (width - imgSize) / 2 + point.x / ratio;
+          moveEff.yFrom = targetBounds.y + point.y / ratio;
+          moveEff.yTo = (height - imgSize) / 2 + point.y / ratio;
+          moveEff.startDelay = 100;
+          
+          moveEff.play();
+          
+          var fadeEff:Fade = new Fade(popUp);
+          
+          fadeEff.alphaFrom = 0;
+          fadeEff.alphaTo = 1;
+          
+          fadeEff.play();
+        }
+      }
+    ]]>
+  </fx:Script>
+
+  <fx:Declarations>
+    <!-- Placer ici les éléments non visuels (services et objets de valeur, par exemple). -->
+    <s:ArrayCollection id="photoList">
+      <fx:Object source="data/img/photo01.jpg"/>
+      <fx:Object source="data/img/photo02.jpg"/>
+      <fx:Object source="data/img/photo03.jpg"/>
+      <fx:Object source="data/img/photo04.jpg"/>
+      <fx:Object source="data/img/photo05.jpg"/>
+      <fx:Object source="data/img/photo06.jpg"/>
+      <fx:Object source="data/img/photo07.jpg"/>
+      <fx:Object source="data/img/photo08.jpg"/>
+      <fx:Object source="data/img/photo09.jpg"/>
+      <fx:Object source="data/img/photo10.jpg"/>
+    </s:ArrayCollection>
+
+    <s:Group width="200" height="200" id="popUp"
+             mouseDownOutside="PopUpManager.removePopUp(popUp)">
+      <s:Image width="100%" height="100%" id="img" smooth="true"/>
+    </s:Group>
+  </fx:Declarations>
+
+
+  <s:SkinnableContainer width="100%" styleName="componentContainerStyle">
+    <s:layout>
+      <s:VerticalLayout horizontalAlign="center"/>
+    </s:layout>
+    <pia:CarouselList id="carouselList" width="100%" height="180"
+                             itemRenderer="com.pialabs.eskimo.samples.renderers.ImageRenderer"
+                             dataProvider="{photoList}"
+                             itemClick="slideDataGroup_itemClickHandler(event)">
+      <pia:layout>
+        <pia:CircularLayout id="circularLayout"
+                                depthRation="{sliderDepth.value}"
+                                itemWidth="{sliderWidth.value}"
+                                itemHeight="{sliderHeight.value}"
+                                heightRatio="{sliderHeightRatio.value}"/>
+      </pia:layout>
+    </pia:CarouselList>
+  </s:SkinnableContainer>
+
+  <s:SkinnableContainer width="100%" height="100%"
+                        styleName="parameterContainerStyle">
+    <s:Scroller width="100%" height="100%">
+      <s:Group width="100%">
+        <s:layout>
+          <s:VerticalLayout horizontalAlign="center"/>
+        </s:layout>
+        <s:Form width="100%">
+          <s:FormItem label="Depth ratio" width="100%">
+            <s:HSlider id="sliderDepth" minimum="0.1" maximum="1"
+                       stepSize="0.01" value="0.5"/>
+          </s:FormItem>
+          <s:FormItem label="Height ratio" width="100%">
+            <s:HSlider id="sliderHeightRatio" minimum="-1" maximum="1"
+                       stepSize="0.01" value="1"/>
+          </s:FormItem>
+          <s:FormItem label="Item width" width="100%">
+            <s:HSlider id="sliderWidth" minimum="10" maximum="200" stepSize="1"
+                       value="75"/>
+          </s:FormItem>
+          <s:FormItem label="Item height" width="100%">
+            <s:HSlider id="sliderHeight" minimum="10" maximum="200" stepSize="1"
+                       value="75"/>
+          </s:FormItem>
+        </s:Form>
+      </s:Group>
+    </s:Scroller>
+  </s:SkinnableContainer>
+</views:SampleView>

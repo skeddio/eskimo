@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 
+Copyright (c) 2011, PIA. All rights reserved.
+
+This file is part of Eskimo.
+
+Eskimo is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+Eskimo is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with Eskimo.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<Graphic version="2.0" xmlns="http://ns.adobe.com/fxg/2008" viewWidth="58" viewHeight="28"
+    scaleGridLeft="1" scaleGridTop="1" scaleGridRight="38" scaleGridBottom="27">
+  
+  
+  <Rect width="38" height="28">
+    <fill>
+      <LinearGradient rotation="90">
+        <GradientEntry ratio="0" color="#ffffff" alpha="0.2"/>
+        <GradientEntry ratio="1" color="#ffffff" alpha="0"/>
+      </LinearGradient>
+    </fill>
+  </Rect>
+    
+  <Path data="M 38 0 L 58 14 L 38 28 z">
+    <fill>
+      <LinearGradient rotation="90">
+        <GradientEntry ratio="0" color="#ffffff" alpha="0.2"/>
+        <GradientEntry ratio="1" color="#ffffff" alpha="0"/>
+      </LinearGradient>
+    </fill>
+  </Path>
+
+  <Path data="M 0 0 L 38 0 L 58 14 L 38 28 L 0 28">
+    <stroke>
+      <SolidColorStroke color="#000000" weight="1" alpha="0.2"/>
+    </stroke>
+  </Path>
+  
+</Graphic>

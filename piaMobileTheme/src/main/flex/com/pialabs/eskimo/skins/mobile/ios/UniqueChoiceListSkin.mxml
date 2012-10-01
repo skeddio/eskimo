@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 
+Copyright (c) 2011, PIA. All rights reserved.
+
+This file is part of Eskimo.
+
+Eskimo is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+Eskimo is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with Eskimo.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<!---
+The iOS skin class for the Eskimo UniqueChoiceList component.
+@see com.pialabs.eskimo.UniqueChoiceList
+-->
+<s:Skin xmlns:fx="http://ns.adobe.com/mxml/2009"
+        xmlns:s="library://ns.adobe.com/flex/spark"
+        xmlns:mx="library://ns.adobe.com/flex/mx"
+        xmlns:components="com.pialabs.eskimo.components.*">
+  <!-- host component -->
+  <fx:Metadata>
+    [HostComponent("com.pialabs.eskimo.components.UniqueChoiceList")]
+  </fx:Metadata>
+
+  <!-- SkinParts
+  name=listDisplay, type=spark.components.List, required=true
+  -->
+
+  <components:ListWheel id="listDisplay" verticalCenter="0" horizontalCenter="0"/>
+
+</s:Skin>

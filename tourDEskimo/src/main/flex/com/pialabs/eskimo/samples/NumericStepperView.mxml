@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 
+Copyright (c) 2011, PIA. All rights reserved.
+
+This file is part of Eskimo.
+
+Eskimo is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+Eskimo is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with Eskimo.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<views:SampleView xmlns:fx="http://ns.adobe.com/mxml/2009"
+                  xmlns:s="library://ns.adobe.com/flex/spark"
+                  title="NumericStepperView"
+                  xmlns:views="com.pialabs.eskimo.views.*">
+  <fx:Declarations>
+    <!-- Placer ici les éléments non visuels (services et objets de valeur, par exemple). -->
+  </fx:Declarations>
+  <s:SkinnableContainer width="100%" styleName="componentContainerStyle">
+    <s:layout>
+      <s:HorizontalLayout horizontalAlign="center" gap="1"/>
+    </s:layout>
+
+
+    <s:NumericStepper maximum="31" minimum="1" value="17" width="80"
+                      allowValueWrap="true"/>
+    <s:NumericStepper maximum="12" minimum="1" value="6" width="80"
+                      allowValueWrap="true"/>
+    <s:NumericStepper maximum="2040" minimum="1900" value="2011" width="80"
+                      allowValueWrap="true"/>
+
+
+  </s:SkinnableContainer>
+</views:SampleView>

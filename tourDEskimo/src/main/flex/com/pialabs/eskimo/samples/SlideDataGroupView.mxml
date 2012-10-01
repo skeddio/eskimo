@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 
+Copyright (c) 2011, PIA. All rights reserved.
+
+This file is part of Eskimo.
+
+Eskimo is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+Eskimo is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with Eskimo.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<views:SampleView xmlns:fx="http://ns.adobe.com/mxml/2009"
+                  xmlns:s="library://ns.adobe.com/flex/spark"
+                  title="SlideDataGroupView"
+                  xmlns:views="com.pialabs.eskimo.views.*"
+                  xmlns:pia="http://piaction.com">
+  <fx:Declarations>
+    <!-- Placer ici les éléments non visuels (services et objets de valeur, par exemple). -->
+    <s:ArrayCollection id="photoList">
+      <fx:Object source="data/img/photo01.jpg"/>
+      <fx:Object source="data/img/photo02.jpg"/>
+      <fx:Object source="data/img/photo03.jpg"/>
+      <fx:Object source="data/img/photo04.jpg"/>
+      <fx:Object source="data/img/photo05.jpg"/>
+      <fx:Object source="data/img/photo06.jpg"/>
+      <fx:Object source="data/img/photo07.jpg"/>
+      <fx:Object source="data/img/photo08.jpg"/>
+      <fx:Object source="data/img/photo09.jpg"/>
+      <fx:Object source="data/img/photo10.jpg"/>
+      <fx:Object source="data/img/photo11.jpg"/>
+      <fx:Object source="data/img/photo12.jpg"/>
+      <fx:Object source="data/img/photo13.jpg"/>
+      <fx:Object source="data/img/photo14.jpg"/>
+      <fx:Object source="data/img/photo15.jpg"/>
+      <fx:Object source="data/img/photo16.jpg"/>
+      <fx:Object source="data/img/photo17.jpg"/>
+      <fx:Object source="data/img/photo18.jpg"/>
+      <fx:Object source="data/img/photo19.jpg"/>
+      <fx:Object source="data/img/photo20.jpg"/>
+
+      <fx:Object source="data/img/photo01.jpg"/>
+      <fx:Object source="data/img/photo02.jpg"/>
+      <fx:Object source="data/img/photo03.jpg"/>
+      <fx:Object source="data/img/photo04.jpg"/>
+      <fx:Object source="data/img/photo05.jpg"/>
+      <fx:Object source="data/img/photo06.jpg"/>
+      <fx:Object source="data/img/photo07.jpg"/>
+      <fx:Object source="data/img/photo08.jpg"/>
+      <fx:Object source="data/img/photo09.jpg"/>
+      <fx:Object source="data/img/photo10.jpg"/>
+      <fx:Object source="data/img/photo11.jpg"/>
+      <fx:Object source="data/img/photo12.jpg"/>
+      <fx:Object source="data/img/photo13.jpg"/>
+      <fx:Object source="data/img/photo14.jpg"/>
+      <fx:Object source="data/img/photo15.jpg"/>
+      <fx:Object source="data/img/photo16.jpg"/>
+      <fx:Object source="data/img/photo17.jpg"/>
+      <fx:Object source="data/img/photo18.jpg"/>
+      <fx:Object source="data/img/photo19.jpg"/>
+      <fx:Object source="data/img/photo20.jpg"/>
+
+      <fx:Object source="data/img/photo01.jpg"/>
+      <fx:Object source="data/img/photo02.jpg"/>
+      <fx:Object source="data/img/photo03.jpg"/>
+      <fx:Object source="data/img/photo04.jpg"/>
+      <fx:Object source="data/img/photo05.jpg"/>
+      <fx:Object source="data/img/photo06.jpg"/>
+      <fx:Object source="data/img/photo07.jpg"/>
+      <fx:Object source="data/img/photo08.jpg"/>
+      <fx:Object source="data/img/photo09.jpg"/>
+      <fx:Object source="data/img/photo10.jpg"/>
+      <fx:Object source="data/img/photo11.jpg"/>
+      <fx:Object source="data/img/photo12.jpg"/>
+      <fx:Object source="data/img/photo13.jpg"/>
+      <fx:Object source="data/img/photo14.jpg"/>
+      <fx:Object source="data/img/photo15.jpg"/>
+      <fx:Object source="data/img/photo16.jpg"/>
+      <fx:Object source="data/img/photo17.jpg"/>
+      <fx:Object source="data/img/photo18.jpg"/>
+      <fx:Object source="data/img/photo19.jpg"/>
+      <fx:Object source="data/img/photo20.jpg"/>
+
+      <fx:Object source="data/img/photo01.jpg"/>
+      <fx:Object source="data/img/photo02.jpg"/>
+      <fx:Object source="data/img/photo03.jpg"/>
+      <fx:Object source="data/img/photo04.jpg"/>
+      <fx:Object source="data/img/photo05.jpg"/>
+      <fx:Object source="data/img/photo06.jpg"/>
+      <fx:Object source="data/img/photo07.jpg"/>
+      <fx:Object source="data/img/photo08.jpg"/>
+      <fx:Object source="data/img/photo09.jpg"/>
+      <fx:Object source="data/img/photo10.jpg"/>
+      <fx:Object source="data/img/photo11.jpg"/>
+      <fx:Object source="data/img/photo12.jpg"/>
+      <fx:Object source="data/img/photo13.jpg"/>
+      <fx:Object source="data/img/photo14.jpg"/>
+      <fx:Object source="data/img/photo15.jpg"/>
+      <fx:Object source="data/img/photo16.jpg"/>
+      <fx:Object source="data/img/photo17.jpg"/>
+      <fx:Object source="data/img/photo18.jpg"/>
+      <fx:Object source="data/img/photo19.jpg"/>
+      <fx:Object source="data/img/photo20.jpg"/>
+
+    </s:ArrayCollection>
+  </fx:Declarations>
+  <fx:Script>
+    <![CDATA[
+      import com.pialabs.eskimo.layouts.SlideLayout;
+      
+      private function changeOrientationSelection(event:Event):void
+      {
+        var value:String = ButtonBar(event.target).selectedItem.value;
+        if (value != null)
+        {
+          slideDataGroup.orientation = value;
+        }
+      }
+      
+      private function changeDirectionSelection(event:Event):void
+      {
+        var value:int = ButtonBar(event.target).selectedItem.value;
+        slideDataGroup.direction = value;
+      }
+    ]]>
+  </fx:Script>
+  <s:SkinnableContainer width="100%" styleName="componentContainerStyle">
+    <s:layout>
+      <s:HorizontalLayout verticalAlign="middle"/>
+    </s:layout>
+    <s:Spacer width="100%"/>
+    <s:Button label="&lt;" click="slideDataGroup.previous()"/>
+    <pia:SlideDataGroup id="slideDataGroup" width="150" height="150"
+                        useVirtualLayout="true"
+                        virtualRendererPreloadEnable="true"
+                        orientation="{SlideDataGroup.HORIZONTAL}"
+                        direction="{SlideDataGroup.NORMAL}"
+                        itemRenderer="com.pialabs.eskimo.samples.renderers.ImageRenderer"
+                        dataProvider="{photoList}">
+    </pia:SlideDataGroup>
+    <s:Button label="&gt;" click="slideDataGroup.next()"/>
+    <s:Spacer width="100%"/>
+  </s:SkinnableContainer>
+
+  <s:SkinnableContainer width="100%" styleName="parameterContainerStyle">
+
+    <s:Form width="100%">
+      <!-- Orientation -->
+      <s:FormItem label="Orientation">
+        <s:ButtonBar id="orientationMenu" requireSelection="true"
+                     change="changeOrientationSelection(event)">
+          <s:dataProvider>
+            <s:ArrayCollection>
+              <fx:Object label="Horizontal" value="{SlideDataGroup.HORIZONTAL}"/>
+              <fx:Object label="Vertical" value="{SlideDataGroup.VERTICAL}"/>
+            </s:ArrayCollection>
+          </s:dataProvider>
+        </s:ButtonBar>
+      </s:FormItem>
+      <!-- Direction -->
+      <s:FormItem label="Direction" width="100%">
+        <s:ButtonBar id="directionMenu" requireSelection="true"
+                     change="changeDirectionSelection(event)">
+          <s:dataProvider>
+            <s:ArrayCollection>
+              <fx:Object label="Normal" value="{SlideDataGroup.NORMAL}"/>
+              <fx:Object label="Reverse" value="{SlideDataGroup.REVERSE}"/>
+            </s:ArrayCollection>
+          </s:dataProvider>
+        </s:ButtonBar>
+      </s:FormItem>
+      <!-- Selection -->
+      <s:FormItem label="Selected Index" width="100%">
+        <s:HSlider id="selectedIndexNS" stepSize="1" minimum="0"
+                   maximum="{photoList.length - 1}"
+                   change="slideDataGroup.selectedIndex = selectedIndexNS.value"
+                   value="{slideDataGroup.selectedIndex}"/>
+      </s:FormItem>
+    </s:Form>
+  </s:SkinnableContainer>
+
+</views:SampleView>

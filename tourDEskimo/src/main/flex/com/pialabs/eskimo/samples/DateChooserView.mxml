@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 
+Copyright (c) 2011, PIA. All rights reserved.
+
+This file is part of Eskimo.
+
+Eskimo is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+Eskimo is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with Eskimo.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<views:SampleView xmlns:fx="http://ns.adobe.com/mxml/2009"
+                  xmlns:s="library://ns.adobe.com/flex/spark"
+                  xmlns:views="com.pialabs.eskimo.views.*"
+                  title="ComboBoxView" xmlns:pia="http://piaction.com">
+  <fx:Declarations>
+    <!-- Placer ici les éléments non visuels (services et objets de valeur, par exemple). -->
+  </fx:Declarations>
+  <fx:Script>
+    <![CDATA[
+      import com.pialabs.eskimo.utils.DateUtils;
+      
+      import mx.collections.ArrayCollection;
+      
+      [Bindable]
+      private var defaultDatePattern:String = DateUtils.defaultDateTimePattern;
+      
+      protected function applyParameters(event:Event):void
+      {
+        var minYearText:String = getValueFromTextInput(minYearTextInput);
+        if (minYearText != null)
+        {
+          dateChooser.minYear = Number(minYearText);
+        }
+        
+        var maxYearText:String = getValueFromTextInput(maxYearTextInput);
+        if (maxYearText != null)
+        {
+          dateChooser.maxYear = Number(maxYearText);
+        }
+        
+        var datePatternText:String = datePattern.selectedItem.value;
+        if (datePatternText != null && datePatternText.length > 0)
+        {
+          dateChooser.datePattern = datePatternText;
+        }
+      }
+    ]]>
+  </fx:Script>
+  <s:Scroller width="100%" height="100%" horizontalScrollPolicy="off"
+              verticalScrollPolicy="auto">
+    <s:VGroup width="100%" horizontalAlign="center">
+      <s:SkinnableContainer width="100%" styleName="componentContainerStyle">
+        <s:VGroup id="dateGroup" horizontalAlign="center" width="100%">
+          <pia:DateChooser id="dateChooser"/>
+        </s:VGroup>
+      </s:SkinnableContainer>
+
+      <s:SkinnableContainer width="100%" styleName="parameterContainerStyle">
+        <s:layout>
+          <s:VerticalLayout horizontalAlign="center"/>
+        </s:layout>
+
+        <s:Form width="100%">
+          <s:FormItem label="Date pattern" styleName="verticalFormItemStyle"
+                      width="100%">
+            <s:ButtonBar id="datePattern" width="100%" requireSelection="true"
+                         change="applyParameters(event)">
+              <s:dataProvider>
+                <s:ArrayCollection>
+                  <fx:Object label="default" value="{defaultDatePattern}"/>
+                  <fx:Object label="d MM yyyy" value="d MM yyyy"/>
+                  <fx:Object label="MMM dd yy" value="MMM dd yy"/>
+                </s:ArrayCollection>
+              </s:dataProvider>
+            </s:ButtonBar>
+          </s:FormItem>
+          <s:FormItem width="100%" label="Minimum year">
+            <s:TextInput id="minYearTextInput" prompt="1980"/>
+          </s:FormItem>
+          <s:FormItem width="100%" label="Maximum year">
+            <s:TextInput id="maxYearTextInput" prompt="2040"/>
+          </s:FormItem>
+        </s:Form>
+        <s:Button label="Apply" click="applyParameters(event)"/>
+      </s:SkinnableContainer>
+    </s:VGroup>
+  </s:Scroller>
+</views:SampleView>

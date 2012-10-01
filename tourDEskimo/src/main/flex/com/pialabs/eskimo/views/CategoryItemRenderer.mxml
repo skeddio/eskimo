@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 
+Copyright (c) 2011, PIA. All rights reserved.
+
+This file is part of Eskimo.
+
+Eskimo is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+Eskimo is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with Eskimo.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<s:IconItemRenderer xmlns:fx="http://ns.adobe.com/mxml/2009"
+                    xmlns:s="library://ns.adobe.com/flex/spark"
+                    labelField="name" iconWidth="30" iconHeight="30" height="60"
+                    verticalCenter="0" verticalAlign="middle" iconField="icon"
+                    xmlns:icons="com.pialabs.eskimo.icons.*"
+                    decorator="@Embed(source='/assets/fleche.png')">
+  <fx:Script>
+    <![CDATA[
+      override protected function layoutContents(unscaledWidth:Number, unscaledHeight:Number):void
+      {
+        super.layoutContents(unscaledWidth, unscaledHeight);
+        
+        // start laying out our children now
+        var iconWidth:Number = 0;
+        var iconHeight:Number = 0;
+        var IconAlignOffset:int = 6;
+        
+        var paddingLeft:Number = getStyle("paddingLeft");
+        var paddingTop:Number = getStyle("paddingTop");
+        var paddingBottom:Number = getStyle("paddingBottom");
+        
+        var viewHeight:Number = unscaledHeight - paddingTop - paddingBottom;
+        
+        
+        // icon is on the left
+        if (iconDisplay)
+        {
+          // set the icon's position and size
+          setElementSize(iconDisplay, this.iconWidth, this.iconHeight);
+          
+          iconWidth = iconDisplay.getLayoutBoundsWidth();
+          iconHeight = iconDisplay.getLayoutBoundsHeight();
+          
+          
+          // use vAlign to position the icon.
+          var iconDisplayY:Number = Math.round(0.5 * (unscaledHeight - iconHeight));
+          setElementPosition(iconDisplay, paddingLeft, iconDisplayY - IconAlignOffset);
+        }
+      }
+    ]]>
+  </fx:Script>
+
+</s:IconItemRenderer>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<flexLibProperties includeAllClasses="false" useMultiPlatformConfig="true" version="3">
+  <includeClasses>
+    <classEntry path="com.pialabs.eskimo.components.BreadCrumb"/>
+    <classEntry path="com.pialabs.eskimo.components.CarouselList"/>
+    <classEntry path="com.pialabs.eskimo.components.CheckBoxItemRenderer"/>
+    <classEntry path="com.pialabs.eskimo.components.ChoiceList"/>
+    <classEntry path="com.pialabs.eskimo.components.ComboBox"/>
+    <classEntry path="com.pialabs.eskimo.components.ConfirmButton"/>
+    <classEntry path="com.pialabs.eskimo.components.ContextableList"/>
+    <classEntry path="com.pialabs.eskimo.components.DateChooser"/>
+    <classEntry path="com.pialabs.eskimo.components.DeletableItemRenderer"/>
+    <classEntry path="com.pialabs.eskimo.components.DeletableList"/>
+    <classEntry path="com.pialabs.eskimo.components.ISectionRenderer"/>
+    <classEntry path="com.pialabs.eskimo.components.ListStepper"/>
+    <classEntry path="com.pialabs.eskimo.components.ListWheel"/>
+    <classEntry path="com.pialabs.eskimo.components.ListWheelItemRenderer"/>
+    <classEntry path="com.pialabs.eskimo.components.MobileContextMenu"/>
+    <classEntry path="com.pialabs.eskimo.components.MultiplatformGroup"/>
+    <classEntry path="com.pialabs.eskimo.components.MultipleChoiceList"/>
+    <classEntry path="com.pialabs.eskimo.components.PageIndicator"/>
+    <classEntry path="com.pialabs.eskimo.components.PageIndicatorItem"/>
+    <classEntry path="com.pialabs.eskimo.components.PopOver"/>
+    <classEntry path="com.pialabs.eskimo.components.RadioButtonItemRenderer"/>
+    <classEntry path="com.pialabs.eskimo.components.RightRadioButtonRenderer"/>
+    <classEntry path="com.pialabs.eskimo.components.SectionItemRenderer"/>
+    <classEntry path="com.pialabs.eskimo.components.SectionList"/>
+    <classEntry path="com.pialabs.eskimo.components.SlideDataGroup"/>
+    <classEntry path="com.pialabs.eskimo.components.SplitView"/>
+    <classEntry path="com.pialabs.eskimo.components.SplitViewApplication"/>
+    <classEntry path="com.pialabs.eskimo.components.Toast"/>
+    <classEntry path="com.pialabs.eskimo.components.UniqueChoiceList"/>
+    <classEntry path="com.pialabs.eskimo.components.maps.GMap"/>
+    <classEntry path="com.pialabs.eskimo.components.maps.GMapEvent"/>
+    <classEntry path="com.pialabs.eskimo.components.maps.GMapHTMLTemplate"/>
+    <classEntry path="com.pialabs.eskimo.controls.SkinnableAlert"/>
+    <classEntry path="com.pialabs.eskimo.data.SectionTitleLabel"/>
+    <classEntry path="com.pialabs.eskimo.events.ConfirmEvent"/>
+    <classEntry path="com.pialabs.eskimo.events.ContextableListEvent"/>
+    <classEntry path="com.pialabs.eskimo.events.DeletableListEvent"/>
+    <classEntry path="com.pialabs.eskimo.events.MobileCalendarEvent"/>
+    <classEntry path="com.pialabs.eskimo.events.MobileContextMenuEvent"/>
+    <classEntry path="com.pialabs.eskimo.layouts.CircularLayout"/>
+    <classEntry path="com.pialabs.eskimo.layouts.SlideLayout"/>
+    <classEntry path="com.pialabs.eskimo.utils.DateUtils"/>
+    <classEntry path="com.pialabs.eskimo.utils.DeeboxPerformanceFps"/>
+    <classEntry path="com.pialabs.eskimo.utils.DeeboxPerformanceMonitor"/>
+  </includeClasses>
+  <includeResources/>
+  <namespaceManifests>
+    <namespaceManifestEntry manifest="/Projects/deebox/_publish/eskimo/piaMobileLib/src/main/resources/manifest.xml" namespace="http://piaction.com"/>
+  </namespaceManifests>
+</flexLibProperties>

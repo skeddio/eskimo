@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 
+Copyright (c) 2011, PIA. All rights reserved.
+
+This file is part of Eskimo.
+
+Eskimo is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+Eskimo is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with Eskimo.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<views:SampleView xmlns:fx="http://ns.adobe.com/mxml/2009"
+                  xmlns:s="library://ns.adobe.com/flex/spark"
+                  title="UniqueChoiceListView"
+                  xmlns:views="com.pialabs.eskimo.views.*"
+                  initialize="sampleview1_initializeHandler(event)" xmlns:pia="http://piaction.com">
+  <fx:Script>
+    <![CDATA[
+      import com.pialabs.eskimo.model.Model;
+      
+      import mx.events.FlexEvent;
+      
+      [Bindable]
+      private var selectedItem:Object;
+      
+      protected function sampleview1_initializeHandler(event:FlexEvent):void
+      {
+        list.dataProvider = Model.createPersonList();
+        
+        selectedItem = list.dataProvider.getItemAt(0);
+      }
+    ]]>
+  </fx:Script>
+  <fx:Declarations>
+    <!-- Placer ici les éléments non visuels (services et objets de valeur, par exemple). -->
+  </fx:Declarations>
+
+  <s:SkinnableContainer width="100%" styleName="componentContainerStyle">
+    <s:layout>
+      <s:VerticalLayout horizontalAlign="center"/>
+    </s:layout>
+    <pia:UniqueChoiceList id="list" width="190" height="100%"
+                                 change="selectedItem = list.selectedItem"/>
+    <s:Label text="{'Selected item : ' + selectedItem}" color="#000000"/>
+  </s:SkinnableContainer>
+
+</views:SampleView>
