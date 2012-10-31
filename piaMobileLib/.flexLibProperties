@@ -47,7 +47,5 @@
     <classEntry path="com.pialabs.eskimo.utils.DeeboxPerformanceMonitor"/>
   </includeClasses>
   <includeResources/>
-  <namespaceManifests>
-    <namespaceManifestEntry manifest="/Projects/deebox/_publish/eskimo/piaMobileLib/src/main/resources/manifest.xml" namespace="http://piaction.com"/>
-  </namespaceManifests>
+  <namespaceManifests/>
 </flexLibProperties>
